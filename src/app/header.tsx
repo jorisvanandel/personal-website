@@ -5,10 +5,10 @@ export function Header() {
     return (
         <header className="mb-8 flex items-center justify-between">
             <div>
-                <Link href="/" className="font-medium text-zinc-900">
+                <Link href="/" className="font-medium text-foreground">
                     Joris van Andel
                 </Link>
-                <p className="text-zinc-600">
+                <p className="text-muted-foreground">
                     Full-Stack Software Engineer
                 </p>
             </div>
