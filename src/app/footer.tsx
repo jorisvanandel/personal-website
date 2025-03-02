@@ -71,7 +71,7 @@ export function Footer() {
         <footer className="mt-24 border-t border-border px-0 py-4">
             <div className="flex items-center justify-between">
                 <TextLoop className="text-sm text-muted-foreground">
-                    <span>© 2025 Joris van Andel.</span>
+                    <span>© { new Date().getFullYear() } Joris van Andel.</span>
                     <span>Made with ❤️ in Amsterdam.</span>
                 </TextLoop>
                 <div className="text-muted-foreground">
