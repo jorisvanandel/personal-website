@@ -1,5 +1,6 @@
 'use client'
 import Link from 'next/link'
+import { TextEffect } from '@/components/ui/text-effect'
 
 export function Header() {
     return (
@@ -8,9 +9,15 @@ export function Header() {
                 <Link href="/" className="font-medium text-foreground">
                     Joris van Andel
                 </Link>
-                <p className="text-muted-foreground">
+                <TextEffect
+                    as="p"
+                    preset="fade"
+                    per="char"
+                    className="text-muted-foreground"
+                    delay={0.5}
+                >
                     Full-Stack Software Engineer
-                </p>
+                </TextEffect>
             </div>
         </header>
     )
