@@ -17,7 +17,6 @@ type Study = {
     title: string
     start: string
     end: string
-    description?: string;
 }
 
 type SocialLink = {
@@ -168,7 +167,7 @@ export default function Home() {
               <div className="flex flex-col space-y-0">
                   <AnimatedBackground
                       enableHover
-                      className="h-full w-full rounded-lg bg-zinc-100 dark:bg-zinc-900/80"
+                      className="h-full w-full rounded-lg bg-zinc-100 dark:bg-zinc-700"
                       transition={{
                           type: 'spring',
                           bounce: 0,
@@ -177,16 +176,13 @@ export default function Home() {
                   >
                       {STUDIES.map((study, studyIdx) => (
                           <div key={studyIdx} data-id={studyIdx} className="-mx-3 rounded-xl px-3 py-3">
-                              <div className="flex w-full flex-row justify-between">
+                              <div className="md:flex w-full flex-row justify-between">
                                   <div>
                                       <h4 className="font-normal dark:text-zinc-100">
                                           {study.title}
                                       </h4>
-                                      <p className="text-zinc-500 dark:text-zinc-400">
-                                          {study.description}
-                                      </p>
                                   </div>
-                                  <p className="absolute my-auto right-5 text-zinc-600 dark:text-zinc-400">
+                                  <p className="md:absolute my-auto right-5 text-zinc-600 dark:text-zinc-400">
                                       {study.start} - {study.end}
                                   </p>
                               </div>
