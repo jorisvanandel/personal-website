@@ -16,7 +16,7 @@ export function Header() {
                     className="text-muted-foreground"
                     delay={0.5}
                 >
-                    Full-Stack Software Engineer
+                    Full-stack Software Engineer
                 </TextEffect>
             </div>
         </header>
