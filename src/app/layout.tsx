@@ -4,6 +4,7 @@ import "./globals.css";
 import { Header } from "@/app/header";
 import {Footer} from "@/app/footer";
 import {ThemeProvider} from "next-themes";
+import Head from "next/head";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,6 +28,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+    <Head>
+        <meta name="description" content="I'm Joris, a full-stack software engineer based in Amsterdam. I have a passion for crafting elagant solutions for complex problems." />
+        <meta name="robots" content="index, follow" />
+        <meta property="og:title" content="Joris van Andel - Full-stack software engineer based in Amsterdam." />
+        <meta property="og:description" content="I'm Joris, a full-stack software engineer based in Amsterdam. I have a passion for crafting elagant solutions for complex problems." />
+        <meta property="og:image" content="/og-image.png" />
+        <meta property="og:url" content="https://www.jorisvanandel.nl" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Joris van Andel - Full-stack software engineer based in Amsterdam." />
+        <meta name="twitter:description" content="I'm Joris, a full-stack software engineer based in Amsterdam. I have a passion for crafting elagant solutions for complex problems." />
+        <meta name="twitter:image" content="/og-image.png" />
+    </Head>
     <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
     >
