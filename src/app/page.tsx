@@ -54,6 +54,7 @@ function MagneticSocialLink({children, link}: { children: React.ReactNode, link:
 
 export default function Home() {
   const WORK_EXPERIENCE: Job[] = [
+      { link: 'https://andelwebsolutions.nl', title: 'Freelancing', start: 'Jun 2018', end: 'Feb 2022', company: 'Andelwebsolutions' },
       { link: 'https://copernica.com', title: 'Software Engineer', start: 'Jan 2020', end: 'Oct 2021', company: 'Copernica' },
       { link: 'https://van-ons.nl', title: 'Back-end Developer', start: 'Feb 2023', end: 'Oct 2023', company: 'Van Ons' },
       { link: 'https://paqt.com', title: 'Full-stack Developer', start: 'Oct 2023', end: 'Now', company: 'PAQT' },
