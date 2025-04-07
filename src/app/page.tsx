@@ -114,8 +114,8 @@ export default function Home() {
           >
               <div className="flex-1">
                   <p className="text-muted-foreground [&>span]:text-foreground">
-                      I&apos;m Joris, a 26-year old <span>tech enthusiast</span> and <span>solopreneur</span> 
-                      with a passion for crafting <span>elegant solutions</span> for complex problems. I am based in 
+                      I&apos;m Joris, a 26-year old <span>tech enthusiast</span> and <span>solopreneur</span> with 
+                      a passion for crafting <span>elegant solutions</span> for complex problems. I am based in 
                       Amsterdam and currently working as a <span>full-stack developer</span> at <span>PAQT</span>.
                   </p>
               </div>
