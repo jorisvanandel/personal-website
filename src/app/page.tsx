@@ -228,7 +228,7 @@ export default function Home() {
               transition={DEFAULT_SECTION_TRANSITION}
           >
               <h3 className="mb-3 text-lg font-medium">Featured projects</h3>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid md:grid-cols-2 gap-4">
                   {PROJECTS.map((project, projectIdx) => (
                       <MorphingDialog
                           key={projectIdx}
