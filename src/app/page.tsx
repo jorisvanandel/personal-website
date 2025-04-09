@@ -111,7 +111,7 @@ export default function Home() {
             shortDescription: 'Accounting SaaS for students associations.',
             longDescription: 'Dispuutonline is a specialized accounting software designed for student associations. Trusted by over 150 associations across the country, it helps manage day-to-day bookkeeping and streamline communication with thousands of students.',
             logo: (
-                <svg className="h-12 text-zinc-300 transition duration-300 ease-out group-hover:text-blue-500" xmlns="http://www.w3.org/2000/svg" width="140" height="140" viewBox="0 0 140 140" fill="none">
+                <svg className="h-12 text-blue-500 md:text-zinc-300 transition duration-300 ease-out group-hover:text-blue-500" xmlns="http://www.w3.org/2000/svg" width="140" height="140" viewBox="0 0 140 140" fill="none">
                     <g clipPath="url(#clip0_2_18)">
                         <path
                             d="M70 0C56.1554 -1.65097e-07 42.6216 4.10543 31.1101 11.7971C19.5987 19.4889 10.6266 30.4213 5.32847 43.2122C0.030333 56.0029 -1.3559 70.0776 1.34506 83.6562C4.04603 97.2347 10.7129 109.708 20.5026 119.498C30.2922 129.287 42.7651 135.954 56.3437 138.655C69.9224 141.356 83.9969 139.97 96.7883 134.671C109.579 129.373 120.511 120.402 128.203 108.89C135.895 97.3786 140 83.8444 140 70H126C126 81.0756 122.715 91.903 116.562 101.112C110.409 110.321 101.663 117.499 91.4301 121.737C81.1977 125.976 69.9379 127.085 59.075 124.924C48.2121 122.763 38.2338 117.43 30.402 109.598C22.5703 101.766 17.2368 91.7879 15.0761 80.9254C12.9153 70.0621 14.0243 58.8024 18.2628 48.5697C22.5013 38.3371 29.6789 29.591 38.8881 23.4377C48.0973 17.2843 58.9242 14 70 14V0Z"
