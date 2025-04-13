@@ -241,12 +241,12 @@ export default function Home() {
                     though I adapt quickly and always like to keep an open mind toward learning new languages and
                     frameworks.</p>
                 <div className="mt-4">
-                    <div className='mb-4 flex space-x-2'>
+                    <div className='mb-4 flex space-x-2 overflow-y-scroll'>
                         {technologies.map((item, index) => (
                             <button
                                 key={index}
                                 onClick={() => setActiveTechStackIndex(index)}
-                                className={`rounded-md px-3 py-1 text-sm font-medium border ${
+                                className={`rounded-md px-3 py-1 text-sm whitespace-nowrap font-medium border ${
                                     activeTechStackIndex === index
                                         ? 'bg-zinc-200 text-zinc-900 border-zinc-200 dark:bg-zinc-800 dark:border-zinc-600 dark:text-zinc-100'
                                         : 'bg-zinc-100 text-zinc-600 border-zinc-100 dark:bg-zinc-700 dark:border-zinc-700 dark:text-zinc-400'
