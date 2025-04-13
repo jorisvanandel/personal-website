@@ -240,7 +240,7 @@ export default function Home() {
                 <p className="text-zinc-500 dark:text-zinc-400">The stack I feel most confident with —
                     though I adapt quickly and always keep an open mind toward new technologies.</p>
                 <div className="mt-4">
-                    <div className='mb-4 flex space-x-2 overflow-y-scroll'>
+                    <div className='pb-4 flex space-x-2 overflow-y-scroll'>
                         {technologies.map((item, index) => (
                             <button
                                 key={index}
