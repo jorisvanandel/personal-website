@@ -237,9 +237,8 @@ export default function Home() {
                 transition={DEFAULT_SECTION_TRANSITION}
             >
                 <h3 className="text-lg font-medium">Tech stack</h3>
-                <p className="text-zinc-500 dark:text-zinc-400">These are the technologies I feel most confident with —
-                    though I adapt quickly and always like to keep an open mind toward learning new languages and
-                    frameworks.</p>
+                <p className="text-zinc-500 dark:text-zinc-400">The stack I feel most confident with —
+                    though I adapt quickly and always keep an open mind toward new technologies.</p>
                 <div className="mt-4">
                     <div className='mb-4 flex space-x-2 overflow-y-scroll'>
                         {technologies.map((item, index) => (
