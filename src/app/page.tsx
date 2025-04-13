@@ -79,12 +79,18 @@ export default function Home() {
                 variants={DEFAULT_SECTION_VARIANTS}
                 transition={DEFAULT_SECTION_TRANSITION}
             >
-                <div className="flex-1">
-                    <p className="text-muted-foreground [&>span]:text-foreground">
+                <div className="flex-1 text-muted-foreground [&_span]:text-foreground">
+                    <p>
                         I&apos;m Joris, a 26-year
                         old <span>tech enthusiast</span> and <span>solopreneur</span> with
-                        a passion for crafting <span>elegant solutions</span> for complex problems. I am based in
-                        Amsterdam and currently working as a <span>full-stack developer</span> at <span>PAQT</span>.
+                        a passion for building <span>elegant solutions</span> for complex problems.
+
+                        I thrive in <span>fast-paced environments</span> where <span>getting things done</span> matters
+                        most.
+                    </p>
+                    <p className="mt-3">
+                        I am based in <span>Amsterdam</span> and currently working as
+                        a <span>full-stack developer</span> at <span>PAQT.</span>
                     </p>
                 </div>
             </motion.section>
@@ -93,8 +99,10 @@ export default function Home() {
                 variants={DEFAULT_SECTION_VARIANTS}
                 transition={DEFAULT_SECTION_TRANSITION}
             >
-                <h3 className="mb-5 text-lg font-medium">Work Experience</h3>
-                <div className="flex flex-col space-y-2">
+                <h3 className="text-lg font-medium">Work Experience</h3>
+                <p className="text-zinc-500 dark:text-zinc-400">I have over 6 years of experience building software
+                    ranging from MVP's for start-ups to mission-critical software for enterprises.</p>
+                <div className="mt-4 flex flex-col space-y-2">
                     {workExperiences.map((job, jobIdx) => (
                         <a
                             className="relative overflow-hidden rounded-2xl bg-zinc-300/30 p-[1px] dark:bg-zinc-600/30"
@@ -131,8 +139,10 @@ export default function Home() {
                 variants={DEFAULT_SECTION_VARIANTS}
                 transition={DEFAULT_SECTION_TRANSITION}
             >
-                <h3 className="mb-3 text-lg font-medium">Featured projects</h3>
-                <div className="grid md:grid-cols-2 gap-4">
+                <h3 className="text-lg font-medium">Featured projects</h3>
+                <p className="text-zinc-500 dark:text-zinc-400">In my spare time, I like to hack away at side projects —
+                    a few even make it out into the world.</p>
+                <div className="mt-4 grid md:grid-cols-2 gap-4">
                     {projects.map((project, projectIdx) => (
                         <MorphingDialog
                             key={projectIdx}
@@ -213,7 +223,8 @@ export default function Home() {
                                             </a>
                                         </MorphingDialogDescription>
                                     </div>
-                                    <MorphingDialogClose className='block sm:hidden bg-zinc-100 p-1 rounded-lg text-zinc-600'/>
+                                    <MorphingDialogClose
+                                        className='block sm:hidden bg-zinc-100 p-1 rounded-lg text-zinc-600'/>
                                 </MorphingDialogContent>
                             </MorphingDialogContainer>
                         </MorphingDialog>
@@ -226,9 +237,10 @@ export default function Home() {
                 transition={DEFAULT_SECTION_TRANSITION}
             >
                 <h3 className="text-lg font-medium">Tech stack</h3>
-                <p className="text-zinc-500 dark:text-zinc-400">These are the technologies I feel most confident with.
-                    However, I am not limited by them and am always on the lookout for new technologies.</p>
-                <div className="mt-5">
+                <p className="text-zinc-500 dark:text-zinc-400">These are the technologies I feel most confident with —
+                    though I adapt quickly and always like to keep an open mind toward learning new languages and
+                    frameworks.</p>
+                <div className="mt-4">
                     <div className='mb-4 flex space-x-2'>
                         {technologies.map((item, index) => (
                             <button
@@ -307,7 +319,7 @@ export default function Home() {
                     Feel free to contact me at{' '}
                     <a className="underline dark:text-zinc-300" href={`mailto:${EMAIL}`}>
                         {EMAIL}
-                    </a>
+                    </a>.
                 </p>
                 <div className="flex items-center justify-start space-x-3">
                     {socialLinks.map((link) => (
