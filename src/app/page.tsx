@@ -1,8 +1,8 @@
 'use client';
 import { motion } from 'motion/react'
 import { Spotlight } from '@/components/ui/spotlight'
-import {AnimatedBackground} from "@/components/ui/animated-background";
-import {Magnetic} from "@/components/ui/magnetic";
+import { AnimatedBackground } from "@/components/ui/animated-background";
+import { Magnetic } from "@/components/ui/magnetic";
 import {
     MorphingDialog,
     MorphingDialogTrigger,
@@ -14,7 +14,8 @@ import {
     MorphingDialogDescription,
     MorphingDialogContainer,
 } from '@/components/ui/morphing-dialog';
-import {JSX} from "react";
+import {JSX, useState} from "react";
+import { TransitionPanel } from '@/components/ui/transition-panel';
 
 type Job = {
     company: string
@@ -142,6 +143,36 @@ export default function Home() {
                 </span>
             ),
             finished: false,
+        },
+    ];
+
+    const [activeTechStackIndex, setActiveTechStackIndex] = useState(0);
+
+    const TECH_STACK = [
+        {
+            title: 'Front-end',
+            content:
+                '<b>Typescript</b> combined with <b>React</b> or <b>Vue</b>. <b>Tailwind</b> for styling. <b>Vite</b> and <b>Turbopack</b> for build and development. <b>Nuxt</b> and <b>Next</b> for larger web applications.',
+        },
+        {
+            title: 'Back-end',
+            content:
+                '<b>PHP</b> combined with frameworks such as <b>Laravel</b> and <b>Symfony</b>. Recently I have been exploring <b>Golang</b> and <b>Java</b>.',
+        },
+        {
+            title: 'Databases',
+            content:
+                '<b>MySQL</b> and <b>PostgreSQL</b>, depending on the project. <b>NoSQL</b> if special requirements demand for it.',
+        },
+        {
+            title: 'DevOps',
+            content:
+                '<b>Docker</b> for local development, <b>NGINX</b> for most HTTP related stuff and <b>Kubernetes</b> for production. <b>Git</b> and <b>GitHub</b> for source control and CI/CD with <b>GitHub Actions</b>',
+        },
+        {
+            title: 'Utilities',
+            content:
+                '<b>Redis</b> and <b>Elasticsearch</b> for blazing fast UX. <b>Composer</b> and <b>(P)NPM</b> for dependency management.',
         },
     ];
 
@@ -316,33 +347,75 @@ export default function Home() {
               </div>
           </motion.section>
 
-          <motion.section
-              variants={DEFAULT_SECTION_VARIANTS}
-              transition={DEFAULT_SECTION_TRANSITION}
-          >
-              <h3 className="mb-3 text-lg font-medium">Studies</h3>
-              <div className="flex flex-col space-y-0">
-                  <AnimatedBackground
-                      enableHover
-                      className="h-full w-full rounded-lg bg-zinc-100 dark:bg-zinc-700"
-                      transition={{
-                          type: 'spring',
-                          bounce: 0,
-                          duration: 0.2,
-                      }}
-                  >
-                      {STUDIES.map((study, studyIdx) => (
-                          <div key={studyIdx} data-id={studyIdx} className="-mx-3 rounded-xl px-3 py-3">
-                              <div className="md:flex w-full flex-row justify-between">
-                                  <div>
-                                      <h4 className="font-normal dark:text-zinc-100">
-                                          {study.title}
-                                      </h4>
-                                  </div>
-                                  <p className="md:absolute my-auto right-5 text-zinc-600 dark:text-zinc-400">
-                                      {study.start} - {study.end}
-                                  </p>
-                              </div>
+            <motion.section
+                variants={DEFAULT_SECTION_VARIANTS}
+                transition={DEFAULT_SECTION_TRANSITION}
+            >
+                <h3 className="text-lg font-medium">Tech stack</h3>
+                <p className="text-zinc-500 dark:text-zinc-400">These are the technologies I feel most confident with. However, I am not limited by them and am always on the lookout for new technologies.</p>
+                <div className="mt-5">
+                    <div className='mb-4 flex space-x-2'>
+                        {TECH_STACK.map((item, index) => (
+                            <button
+                                key={index}
+                                onClick={() => setActiveTechStackIndex(index)}
+                                className={`rounded-md px-3 py-1 text-sm font-medium border ${
+                                    activeTechStackIndex === index
+                                        ? 'bg-zinc-200 text-zinc-900 border-zinc-200 dark:bg-zinc-800 dark:border-zinc-600 dark:text-zinc-100'
+                                        : 'bg-zinc-100 text-zinc-600 border-zinc-100 dark:bg-zinc-700 dark:border-zinc-700 dark:text-zinc-400'
+                                }`}
+                            >
+                                {item.title}
+                            </button>
+                        ))}
+                    </div>
+                    <div className='overflow-hidden border-t border-zinc-200 dark:border-zinc-700'>
+                        <TransitionPanel
+                            activeIndex={activeTechStackIndex}
+                            transition={{duration: 0.2, ease: 'easeInOut'}}
+                            variants={{
+                                enter: {opacity: 0, y: -50, filter: 'blur(4px)'},
+                                center: {opacity: 1, y: 0, filter: 'blur(0px)'},
+                                exit: {opacity: 0, y: 50, filter: 'blur(4px)'},
+                            }}
+                        >
+                            {TECH_STACK.map((item, index) => (
+                                <div key={index} className='py-2'>
+                                    <p className='text-zinc-500 dark:text-zinc-400 [&_b]:font-medium [&_b]:text-zinc-700 dark:[&_b]:text-zinc-200' dangerouslySetInnerHTML={{ __html : item.content }}/>
+                                </div>
+                            ))}
+                        </TransitionPanel>
+                    </div>
+                </div>
+            </motion.section>
+
+            <motion.section
+                variants={DEFAULT_SECTION_VARIANTS}
+                transition={DEFAULT_SECTION_TRANSITION}
+            >
+                <h3 className="mb-3 text-lg font-medium">Studies</h3>
+                <div className="flex flex-col space-y-0">
+                    <AnimatedBackground
+                        enableHover
+                        className="h-full w-full rounded-lg bg-zinc-100 dark:bg-zinc-700"
+                        transition={{
+                            type: 'spring',
+                            bounce: 0,
+                            duration: 0.2,
+                        }}
+                    >
+                        {STUDIES.map((study, studyIdx) => (
+                            <div key={studyIdx} data-id={studyIdx} className="-mx-3 rounded-xl px-3 py-3">
+                                <div className="md:flex w-full flex-row justify-between">
+                                    <div>
+                                        <h4 className="font-normal dark:text-zinc-100">
+                                            {study.title}
+                                        </h4>
+                                    </div>
+                                    <p className="md:absolute my-auto right-5 text-zinc-600 dark:text-zinc-400">
+                                        {study.start} - {study.end}
+                                    </p>
+                                </div>
                           </div>
                       ))}
                   </AnimatedBackground>
