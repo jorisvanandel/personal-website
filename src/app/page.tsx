@@ -200,11 +200,11 @@ export default function Home() {
                                                 exit: {opacity: 0, scale: 0.8, y: 100},
                                             }}
                                         >
-                                            <p className='mt-2 text-zinc-500 dark:text-zinc-500'>
+                                            <p className='mt-2 text-zinc-500 dark:text-zinc-400'>
                                                 {project.longDescription}
                                             </p>
                                             <a
-                                                className='mt-2 inline-flex text-zinc-500 underline'
+                                                className='mt-2 inline-flex text-zinc-500 dark:text-zinc-300 underline'
                                                 href={project.link}
                                                 target='_blank'
                                                 rel='noopener noreferrer'
@@ -213,7 +213,7 @@ export default function Home() {
                                             </a>
                                         </MorphingDialogDescription>
                                     </div>
-                                    <MorphingDialogClose className='text-zinc-50'/>
+                                    <MorphingDialogClose className='block sm:hidden bg-zinc-100 p-1 rounded-lg text-zinc-600'/>
                                 </MorphingDialogContent>
                             </MorphingDialogContainer>
                         </MorphingDialog>
