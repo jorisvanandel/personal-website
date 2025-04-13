@@ -101,7 +101,7 @@ export default function Home() {
             >
                 <h3 className="text-lg font-medium">Work Experience</h3>
                 <p className="text-zinc-500 dark:text-zinc-400">I have over 6 years of experience building software
-                    ranging from MVP's for start-ups to mission-critical software for enterprises.</p>
+                    ranging from MVP&apos;s for start-ups to mission-critical software for enterprises.</p>
                 <div className="mt-4 flex flex-col space-y-2">
                     {workExperiences.map((job, jobIdx) => (
                         <a
