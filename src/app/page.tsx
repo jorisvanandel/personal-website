@@ -153,21 +153,18 @@ export default function Home() {
                             }}
                         >
                             <MorphingDialogTrigger
-                                disabled={!project.finished}
                                 style={{
                                     borderRadius: '12px',
                                 }}
                                 className='relative group flex flex-col overflow-hidden border border-zinc-950/10 bg-white dark:border-zinc-50/10 dark:bg-zinc-900'
                             >
-                                {project.finished && (
-                                    <svg
-                                        className="opacity-0 translate-y-4 group-hover:translate-y-3 transition duration-300 group-hover:opacity-100 absolute right-3 text-zinc-400 size-5"
-                                        xmlns="http://www.w3.org/2000/svg" fill="currentColor"
-                                        viewBox="0 0 24 24">
-                                        <path
-                                            d="M20 4h1a1 1 0 00-1-1v1zm-1 12a1 1 0 102 0h-2zM8 3a1 1 0 000 2V3zM3.293 19.293a1 1 0 101.414 1.414l-1.414-1.414zM19 4v12h2V4h-2zm1-1H8v2h12V3zm-.707.293l-16 16 1.414 1.414 16-16-1.414-1.414z"></path>
-                                    </svg>
-                                )}
+                                <svg
+                                    className="opacity-0 translate-y-4 group-hover:translate-y-3 transition duration-300 group-hover:opacity-100 absolute right-3 text-zinc-400 size-5"
+                                    xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path
+                                        d="M20 4h1a1 1 0 00-1-1v1zm-1 12a1 1 0 102 0h-2zM8 3a1 1 0 000 2V3zM3.293 19.293a1 1 0 101.414 1.414l-1.414-1.414zM19 4v12h2V4h-2zm1-1H8v2h12V3zm-.707.293l-16 16 1.414 1.414 16-16-1.414-1.414z"></path>
+                                </svg>
                                 <div
                                     className="h-36 w-full flex justify-center items-center bg-zinc-50 dark:bg-zinc-950">
                                     {project.logo}
@@ -191,8 +188,8 @@ export default function Home() {
                                     className='pointer-events-auto relative flex h-auto w-full flex-col overflow-hidden border border-zinc-950/10 bg-white dark:border-zinc-50/10 dark:bg-zinc-900 sm:w-[500px]'
                                 >
                                     <MorphingDialogImage
-                                        src={project.imageUrl ?? ''}
-                                        alt='Dispuutonline - Accounting SaaS for student associations.'
+                                        src={project.imageUrl}
+                                        alt={project.title}
                                         className='h-full w-full'
                                     />
                                     <div className='p-6'>

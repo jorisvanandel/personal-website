@@ -31,6 +31,5 @@ export type Project = {
     shortDescription: string;
     longDescription?: string;
     logo: JSX.Element;
-    imageUrl?: string;
-    finished: boolean;
+    imageUrl: string;
 }
